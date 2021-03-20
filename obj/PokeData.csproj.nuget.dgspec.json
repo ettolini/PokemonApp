@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ettor\\OneDrive\\Documentos\\EttoDocs\\PROJECTS\\Practice\\CS PRACTICE\\PokeData\\PokeData.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ettor\\OneDrive\\Documentos\\EttoDocs\\PROJECTS\\Practice\\CS PRACTICE\\PokeData\\PokeData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ettor\\OneDrive\\Documentos\\EttoDocs\\PROJECTS\\Practice\\CS PRACTICE\\PokeData\\PokeData.csproj",
+        "projectName": "PokeData",
+        "projectPath": "C:\\Users\\ettor\\OneDrive\\Documentos\\EttoDocs\\PROJECTS\\Practice\\CS PRACTICE\\PokeData\\PokeData.csproj",
+        "packagesPath": "C:\\Users\\ettor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ettor\\OneDrive\\Documentos\\EttoDocs\\PROJECTS\\Practice\\CS PRACTICE\\PokeData\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ettor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
