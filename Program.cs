@@ -48,23 +48,35 @@ namespace PokemonApp
                                 var dataObj = JObject.Parse(data);
                                 //Then create a new instance of PokeItem, and string interpolate your name property to your JSON object.
                                 //Which will convert it to a string, since each property value is a instance of JToken.
-                                var totalTypes = (JArray)dataObj["types"];
-                                var types = totalTypes.Count > 1 ?
-                                    $"{totalTypes[0]["type"]["name"]}, {totalTypes[1]["type"]["name"]}" :
-                                    $"{totalTypes[0]["type"]["name"]}";
+                                var types = (JArray)dataObj["types"];
+                                var typeNames = new string[2];
+                                typeNames[0] = (string)types[0]["type"]["name"];
+                                bool singleType = true;
+
+                                if (types.Count > 1)
+                                {
+                                    typeNames[1] = (string)types[1]["type"]["name"];
+                                    singleType = false;
+                                }
 
                                 PokeItem pokeItem = new PokeItem(
                                     id: $"{dataObj["id"]}",
                                     height: $"{dataObj["height"]}",
                                     weight: $"{dataObj["weight"]}",
-                                    types: $"{types}"
+                                    types: typeNames
                                 );
+
+                                string infoText = ($@"Id: {pokeItem.Id}
+Height: {pokeItem.Height}
+Weight: {pokeItem.Weight}
+Types: {pokeItem.Types[0]}");
+                                if (!singleType)
+                                {
+                                    infoText += $" & {pokeItem.Types[1]}";
+                                }
+
                                 //Log your pokeItem's name to the Console.
-                                Console.WriteLine(
-                                    @"Id: {0}
-Height: {1}
-Weight: {2}
-Types: {3}", pokeItem.Id, pokeItem.Height, pokeItem.Weight, pokeItem.Types);
+                                Console.WriteLine(infoText);
                             }
                             else
                             {
