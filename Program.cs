@@ -48,7 +48,10 @@ namespace PokemonApp
                                 var dataObj = JObject.Parse(data);
                                 //Then create a new instance of PokeItem, and string interpolate your name property to your JSON object.
                                 //Which will convert it to a string, since each property value is a instance of JToken.
-                                var types = dataObj["types"][0]["type"]["name"];
+                                var totalTypes = (JArray)dataObj["types"];
+                                var types = totalTypes.Count > 1 ?
+                                    $"{totalTypes[0]["type"]["name"]}, {totalTypes[1]["type"]["name"]}" :
+                                    $"{totalTypes[0]["type"]["name"]}";
 
                                 PokeItem pokeItem = new PokeItem(
                                     id: $"{dataObj["id"]}",
@@ -61,8 +64,7 @@ namespace PokemonApp
                                     @"Id: {0}
 Height: {1}
 Weight: {2}
-Types: {3}
-{4}", pokeItem.Id, pokeItem.Height, pokeItem.Weight, pokeItem.Types);
+Types: {3}", pokeItem.Id, pokeItem.Height, pokeItem.Weight, pokeItem.Types);
                             }
                             else
                             {
