@@ -20,8 +20,8 @@ namespace PokemonApp
 
         //Define your static method which will make the method become part of the class
         //Also make it asynchronous meaning it is retrieving data from a api.
-        //Have it void since your are logging the result into the console.
-        //Which would take a integar as a argument.
+        //Have it void since you are logging the result into the console.
+        //Which would take an integer as an argument.
         public static async void GetPokemon(string pokeName)
         {
             //Define your base url
@@ -34,10 +34,10 @@ namespace PokemonApp
                 {
                     //Now get your response from the client from get request to baseurl.
                     //Use the await keyword since the get request is asynchronous, and want it run before next asychronous operation.
-                    using (HttpResponseMessage res = await client.GetAsync(baseURL))
+                    using (HttpResponseMessage response = await client.GetAsync(baseURL))
                     {
                         //Now we will retrieve content from our response, which would be HttpContent, retrieve from the response Content property.
-                        using (HttpContent content = res.Content)
+                        using (HttpContent content = response.Content)
                         {
                             //Retrieve the data from the content of the response, have the await keyword since it is asynchronous.
                             string data = await content.ReadAsStringAsync();
