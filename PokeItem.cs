@@ -21,5 +21,6 @@ namespace PokemonApp
         public int Height { get; set; }
         public int Weight { get; set; }
         public JObject[] Types { get; set; }
+        public JObject[] LocationEncounters { get; set; }
     }
 }
