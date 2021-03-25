@@ -31,9 +31,11 @@ namespace PokemonApp
 
                 PokeItem pokeItem = JsonConvert.DeserializeObject<PokeItem>(content);
 
+                // TODO: use master branch to check the type of the "types" element inside the json
                 System.Console.WriteLine($@"Id: {pokeItem.Id}
 Height: {pokeItem.Height}
-Weight: {pokeItem.Weight}");
+Weight: {pokeItem.Weight}
+Types: {pokeItem.Types[0]["type"]["name"]}");
             }
             catch (Exception exception)
             {
